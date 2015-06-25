@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Juan Arroyave Test for GreenTube</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="pop_up_window_title">Play game in position %1$d</string>
+
+
+    <integer name="saved_images_per_page">8</integer>
+    <integer name="saved_total_images">20</integer>
+
+
+    <string name="preference_file_key">com.juandavidarroyave.android.mobile.gtTest.Preference_File</string>
+    <string name="images_per_page">IMAGES_PER_PAGE</string>
+    <string name="total_images">NUMBER_OF_IMAGES</string>
+
+    <string name="dummy_text">
+        <b>Lorem ipsum dolor sit amet</b>, consectetur adipiscing elit. Duis consectetur, sem pulvinar faucibus fringilla, lectus enim condimentum leo, at ornare neque dui sed nulla. Donec nisi massa, consequat ac diam eu, venenatis tincidunt ante. Vestibulum consectetur sit amet ligula non faucibus. Maecenas hendrerit viverra dui, sed lobortis nisi consectetur ac. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc dictum scelerisque tellus, eget lacinia justo posuere id. Sed laoreet maximus maximus. Pellentesque magna lacus, tristique sit amet aliquet vitae, fringilla consequat dolor. Aenean ligula purus, vehicula et lobortis sit amet, fringilla ac ipsum. Quisque pulvinar ante faucibus metus scelerisque egestas.
+        \n\nSuspendisse potenti. Nullam venenatis, tortor non faucibus gravida,<b> diam felis aliquam erat</b>, sed mollis nunc nisi eu est. Integer auctor lacus nunc, eu molestie ipsum blandit ornare. Duis tempus rhoncus tellus non ullamcorper. Curabitur viverra semper euismod. Mauris placerat nisl at iaculis blandit. Etiam ut leo eget magna iaculis tincidunt ac at mauris. Donec quis consequat neque. Nulla facilisi. Nulla porttitor faucibus lobortis. Donec dignissim erat magna, et aliquet mi molestie eu. Quisque at lorem sapien. Quisque id erat non odio porttitor interdum in nec mauris. Donec quis ligula in nunc mollis scelerisque non rutrum eros.
+        \n\nestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean elit felis, elementum eu risus sed, <b>congue rhoncus nisl</b>. Phasellus placerat nisl id maximus tempor. Aliquam ut tortor vel leo accumsan pellentesque. Praesent tempus est non vulputate fermentum. Nunc rutrum elementum tortor. Donec vitae sagittis ex.</string>
+
+    <string name="btn_close">Close</string>
+    <string name="btn_play">Play Now!</string>
+    <string name="title_balance">Balance: %1$d</string>
+
+</resources>
