@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/edit_name"
-    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:layout_width="match_parent" android:layout_height="match_parent"
     android:layout_gravity="center" android:orientation="vertical" android:weightSum="100">
 
     <ScrollView
@@ -13,8 +13,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_gravity="center">
+            android:orientation="vertical">
             <TextView
                 style="@style/body"
                 android:id="@+id/tv_dummy_text"
@@ -31,7 +30,6 @@
     <Button
         android:id="@+id/btn_close_popup"
         android:text="@string/btn_close"
-        android:layout_width="match_parent"  android:layout_height="0dp"
-        android:inputType="text"
+        android:layout_height="0dp" android:layout_width="wrap_content"  style="@style/my_button"
         android:imeOptions="actionDone" android:layout_weight="20"/>
 </LinearLayout>

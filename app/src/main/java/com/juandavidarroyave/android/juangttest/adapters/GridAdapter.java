@@ -2,10 +2,15 @@ package com.juandavidarroyave.android.juangttest.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TableRow;
 
 import com.juandavidarroyave.android.juangttest.utilities.ViewHolder;
 
@@ -68,6 +73,15 @@ public class GridAdapter extends RecyclerView.Adapter<ViewHolder> {
                 //Do nothing to avoid tapping on margins
             }
         });
+        /*final float scale = mFragment.getActivity().getResources().getDisplayMetrics().density;
+        int minMarginSides = 10;
+
+        int maxWidth = (int) (128  * scale + 0.5f);
+        int maxHeight = maxWidth;
+        Log.d("MEDIDAS", "medida :"+ maxWidth + " x "+ String.valueOf(maxHeight));
+        TableRow.LayoutParams params = new TableRow.LayoutParams(
+                maxWidth , maxHeight);
+        viewHolder.container.setLayoutParams(params);*/
     }
 
     @Override

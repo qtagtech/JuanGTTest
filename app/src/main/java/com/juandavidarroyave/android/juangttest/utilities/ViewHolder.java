@@ -3,6 +3,9 @@ package com.juandavidarroyave.android.juangttest.utilities;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+
+
 import com.juandavidarroyave.android.juangttest.R;
 
 public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -15,11 +18,13 @@ public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickL
     public ImageView imgThumbnail;
     public MyViewHolderClicks mListener;
     public View itemView;
+    public LinearLayout container;
 
     public ViewHolder(View itemView) {
         super(itemView);
         imgThumbnail = (ImageView)itemView.findViewById(R.id.img_thumbnail);
         this.itemView = itemView;
+        this.container = (LinearLayout) itemView.findViewById(R.id.holder_container);
 
     }
 

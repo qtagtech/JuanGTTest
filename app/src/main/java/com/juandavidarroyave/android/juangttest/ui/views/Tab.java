@@ -4,11 +4,13 @@ package com.juandavidarroyave.android.juangttest.ui.views;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.*;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -91,6 +93,18 @@ public class Tab extends Fragment implements GridAdapter.OnGridItemClicked {
         super.onResume();
         updateGrid(0);
     }
+
+    /*@Override
+    public void onStart(){
+        super.onStart();
+        final float scale = getActivity().getResources().getDisplayMetrics().density;
+        int minMarginSides = 10;
+        int maxWidth = (int) (128 * scale + 0.5f);
+        int maxHeight = maxWidth;
+        int containerX = mRecyclerView.getMeasuredWidth();
+        int containerY = mRecyclerView.getMeasuredHeight();
+        Log.d("MEDIDAS", "medidas: " + String.valueOf(containerX) + " x " + String.valueOf(containerY));
+    }*/
 
     public void updateGrid(int position){
         int nextImage = ( position * imagesPerPage ) + 1;

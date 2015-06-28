@@ -1,18 +1,27 @@
 package com.juandavidarroyave.android.juangttest;
 
 
+import android.animation.Animator;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.os.AsyncTask;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.CycleInterpolator;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ToxicBakery.viewpager.transforms.CubeInTransformer;
@@ -22,6 +31,7 @@ import com.juandavidarroyave.android.juangttest.adapters.ViewPagerAdapter;
 import com.juandavidarroyave.android.juangttest.ui.views.Popup;
 import com.juandavidarroyave.android.juangttest.ui.views.Tab;
 
+import java.lang.ref.WeakReference;
 import java.util.Random;
 
 import hugo.weaving.DebugLog;
@@ -88,6 +98,12 @@ public class MainActivity extends AppCompatActivity implements Tab.OnImageSelect
         pager.setAdapter(adapter);
         pager.setPageTransformer(true, new CubeOutTransformer());
         pager.addOnPageChangeListener(pageChanger);
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        animateBackground();
     }
 
     @Override
@@ -162,7 +178,12 @@ public class MainActivity extends AppCompatActivity implements Tab.OnImageSelect
     }
 
     private void showEditDialog(int position) {
-        Popup popUpWindow = Popup.newInstance(position);
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int width = size.x;
+        int height = size.y;
+        Popup popUpWindow = Popup.newInstance(position,width,height);
         popUpWindow.show(getSupportFragmentManager(), "pop_up_window");
     }
 
@@ -172,6 +193,41 @@ public class MainActivity extends AppCompatActivity implements Tab.OnImageSelect
             Random r = new Random();
             int i1 = r.nextInt(100000 - 2) + 1 ;
             tvBalance.setText(String.format(getString(R.string.title_balance),i1));
+            tvBalance.animate().translationX(11).setInterpolator(new CycleInterpolator(2)).setDuration(450);
+//            tvBalance.animate().rotationYBy(720);
         }
     };
+
+    private void animateBackground(){
+        final FrameLayout bg = (FrameLayout) findViewById(R.id.bg_layout);
+        final Runnable endAction = new Runnable() {
+            public void run() {
+                bg.animate().scaleX(1).scaleY(1);
+            }
+        };
+
+        bg.animate().scaleX(2).scaleY(2).setListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                endAction.run();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+    }
+
+
 }

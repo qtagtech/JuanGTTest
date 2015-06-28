@@ -39,4 +39,8 @@ dependencies {
     compile 'jp.wasabeef:recyclerview-animators:1.2.0@aar'
     compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
 
+    //Test Dependencies
+    androidTestCompile fileTree(dir: 'libs', include: ['*.jar'])
+
+
 }
